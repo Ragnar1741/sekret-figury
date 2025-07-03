@@ -100,8 +100,8 @@
 
       const message = `🧖 Новая заявка на массаж:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A📅 Дата: ${date}%0A💆 Услуга: ${service}`;
 
-      const telegramBotToken = 'ВАШ_ТОКЕН'; // 7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8
-      const chatId = 'ВАШ_CHAT_ID'; // 800543242
+      const telegramBotToken = '7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8'; // 7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8
+      const chatId = '800543242'; // 800543242
 
       fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${message}`, {
         method: 'GET'
