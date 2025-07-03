@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Секрет фигуры</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-green-50 text-gray-800 font-sans">
+  <!-- Плавающее окно записи -->
+  <div class="fixed bottom-4 right-4 z-50">
+    <a href="#booking" class="bg-lime-500 hover:bg-lime-600 text-white py-3 px-5 rounded-full shadow-lg transition-all">Записаться</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 to-mint-200 p-6">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-lime-700 mb-4">Секрет фигуры</h1>
+      <p class="text-lg md:text-xl text-gray-700 mb-6">Расслабьтесь, восстановитесь, доверьтесь профессионалу</p>
+      <a href="#booking" class="bg-lime-500 hover:bg-lime-600 text-white py-3 px-6 rounded-full shadow-md transition">Онлайн-запись</a>
+    </div>
+  </section>
+
+  <!-- О нас -->
+  <section class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold text-lime-600 mb-4">Обо мне</h2>
+    <p class="text-gray-700 leading-relaxed">Здравствуйте! Меня зовут [Ваше имя]. Я сертифицированный массажист с [X] летним опытом. Предлагаю индивидуальный подход, расслабляющую атмосферу и заботу о каждом клиенте. Работаю с телом и душой.</p>
+  </section>
+
+  <!-- Услуги -->
+  <section class="bg-green-100 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold text-lime-600 mb-8">Услуги и цены</h2>
+      <ul class="space-y-4">
+        <li class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <span>Классический массаж (60 мин)</span>
+          <span class="font-bold">2000 ₽</span>
+        </li>
+        <li class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <span>Расслабляющий массаж (90 мин)</span>
+          <span class="font-bold">3000 ₽</span>
+        </li>
+        <li class="bg-white rounded-xl shadow p-4 flex justify-between items-center">
+          <span>Антицеллюлитный массаж</span>
+          <span class="font-bold">2500 ₽</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Онлайн запись -->
+  <section id="booking" class="py-16 px-6 max-w-2xl mx-auto">
+    <h2 class="text-3xl font-semibold text-lime-600 mb-6">Онлайн-запись</h2>
+    <form class="bg-white p-6 rounded-xl shadow space-y-4">
+      <input type="text" placeholder="Ваше имя" class="w-full p-3 border rounded" required>
+      <input type="tel" placeholder="Телефон" class="w-full p-3 border rounded" required>
+      <input type="date" class="w-full p-3 border rounded" required>
+      <select class="w-full p-3 border rounded" required>
+        <option>Выберите услугу</option>
+        <option>Классический массаж</option>
+        <option>Расслабляющий массаж</option>
+        <option>Антицеллюлитный массаж</option>
+      </select>
+      <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white py-3 px-6 rounded-full">Записаться</button>
+    </form>
+  </section>
+
+  <!-- Галерея -->
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-semibold text-lime-600 mb-8 text-center">Примеры работ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img src="images/photo_2025-04-10_13-56-25.jpg" alt="Фото массажа 1" class="rounded-xl shadow hover:scale-105 transition-transform duration-300">
+        <img src="images/photo_2025-05-20_19-06-47.jpg" alt="Фото массажа 2" class="rounded-xl shadow hover:scale-105 transition-transform duration-300">
+        <img src="images/photo_2025-07-03_06-26-57.jpg" alt="Фото массажа 3" class="rounded-xl shadow hover:scale-105 transition-transform duration-300">
+        <img src="images/photo_2025-07-03_06-26-57 (2).jpg" alt="Фото массажа 4" class="rounded-xl shadow hover:scale-105 transition-transform duration-300">
+        <img src="images/photo_2025-07-03_06-26-58.jpg" alt="Фото массажа 5" class="rounded-xl shadow hover:scale-105 transition-transform duration-300">
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-lime-100 text-center text-sm py-6 text-gray-600">
+    &copy; 2025 Секрет фигуры • Все права защищены
+  </footer>
+</body>
+</html>
