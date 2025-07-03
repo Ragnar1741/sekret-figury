@@ -59,7 +59,6 @@
     <form id="booking-form" class="bg-white p-6 rounded-xl shadow space-y-4">
       <input type="text" id="name" placeholder="Ваше имя" class="w-full p-3 border rounded" required>
       <input type="tel" id="phone" placeholder="Телефон" class="w-full p-3 border rounded" required>
-      <input type="date" id="date" class="w-full p-3 border rounded" required>
       <select id="service" class="w-full p-3 border rounded" required>
         <option>Выберите услугу</option>
         <option>Классический массаж</option>
@@ -94,14 +93,13 @@
       event.preventDefault();
 
       const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const date = document.getElementById('date').value;
+      const phone = document.getElementById('phone').value;  
       const service = document.getElementById('service').value;
 
-      const message = `🧖 Новая заявка на массаж:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A📅 Дата: ${date}%0A💆 Услуга: ${service}`;
+      const message = `🧖 Новая заявка на массаж:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A💆 Услуга: ${service}`;
 
-      const telegramBotToken = '7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8'; // 7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8
-      const chatId = '800543242'; // 800543242
+      const telegramBotToken = '7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8';
+      const chatId = '800543242';
 
       fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${message}`, {
         method: 'GET'
