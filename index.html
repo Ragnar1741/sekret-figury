@@ -56,11 +56,11 @@
   <!-- Онлайн запись -->
   <section id="booking" class="py-16 px-6 max-w-2xl mx-auto">
     <h2 class="text-3xl font-semibold text-lime-600 mb-6">Онлайн-запись</h2>
-    <form class="bg-white p-6 rounded-xl shadow space-y-4">
-      <input type="text" placeholder="Ваше имя" class="w-full p-3 border rounded" required>
-      <input type="tel" placeholder="Телефон" class="w-full p-3 border rounded" required>
-      <input type="date" class="w-full p-3 border rounded" required>
-      <select class="w-full p-3 border rounded" required>
+    <form id="booking-form" class="bg-white p-6 rounded-xl shadow space-y-4">
+      <input type="text" id="name" placeholder="Ваше имя" class="w-full p-3 border rounded" required>
+      <input type="tel" id="phone" placeholder="Телефон" class="w-full p-3 border rounded" required>
+      <input type="date" id="date" class="w-full p-3 border rounded" required>
+      <select id="service" class="w-full p-3 border rounded" required>
         <option>Выберите услугу</option>
         <option>Классический массаж</option>
         <option>Расслабляющий массаж</option>
@@ -68,6 +68,7 @@
       </select>
       <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white py-3 px-6 rounded-full">Записаться</button>
     </form>
+    <p id="result" class="text-center mt-4 text-green-600 font-semibold"></p>
   </section>
 
   <!-- Галерея -->
@@ -87,5 +88,36 @@
   <footer class="bg-lime-100 text-center text-sm py-6 text-gray-600">
     &copy; 2025 Секрет фигуры • Все права защищены
   </footer>
+
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const date = document.getElementById('date').value;
+      const service = document.getElementById('service').value;
+
+      const message = `🧖 Новая заявка на массаж:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A📅 Дата: ${date}%0A💆 Услуга: ${service}`;
+
+      const telegramBotToken = 'ВАШ_ТОКЕН'; // 7682176293:AAGXzpxV7hdyOmuFlrkBdLhMN9poyS8HKI8
+      const chatId = 'ВАШ_CHAT_ID'; // 800543242
+
+      fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${message}`, {
+        method: 'GET'
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('result').textContent = 'Заявка отправлена! Мы скоро с вами свяжемся.';
+          document.getElementById('booking-form').reset();
+        } else {
+          document.getElementById('result').textContent = 'Произошла ошибка. Попробуйте ещё раз.';
+        }
+      })
+      .catch(() => {
+        document.getElementById('result').textContent = 'Ошибка при отправке. Проверьте подключение к интернету.';
+      });
+    });
+  </script>
 </body>
 </html>
